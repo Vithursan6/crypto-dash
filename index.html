@@ -24,15 +24,12 @@
       </p>
     </header>
 
-    <main class="d-flex">
-
-    <div class="d-flex ">
-
-      <div class="col-6 col-md-4">
+    <main class="flex-row justify-space-between">
+      <div class="col-12 col-md-4">
         <div class="card">
           <h3 class="card-header text-uppercase">Search By Token ID</h3>
           <form id="user-form" class="card-body">
-            <label class="form-label" for="tokenId">Crypto Token ID</label>
+            <label class="form-label" for="tokenId">Cryto Token ID</label>
             <input
               name="tokenId"
               id="tokenId"
@@ -44,60 +41,14 @@
           </form>
         </div>
 
-        <div class="col-6 col-md-4">
-            <h2 class="subtitle">
-              Search Results: <span id="coin-search"></span>
-            </h2>
-            <div id="results-container-1" class="list-group"></div>
-          </div>
 
-    </div>
-      
-
-    <div class="d-flex">
-
-
-        <div class="col-6 col-md-4">
-            <div class="card">
-              <h3 class="card-header text-uppercase">Search By Token name</h3>
-              <form id="user-form" class="card-body">
-                <label class="form-label" for="tokenId">Crypto Name</label>
-                <input
-                  name="token-name"
-                  id="token-name"
-                  type="text"
-                  autofocus="true"
-                  class="form-input"
-                />
-                <button type="submit" class="sub-btn2">Submit</button>
-              </form>
-            </div>
-
-
-
-
-
-      <div class="col-6 col-md-4">
+      <div class="col-12 col-md-8">
         <h2 class="subtitle">
-          Search Results: <span id="news-search"></span>
+          Search Results: <span id="coin-search"></span>
         </h2>
-        <div id="results-container-2" class="list-group"></div>
+        <div id="news-container" class="list-group"></div>
       </div>
-
-    </div>
-
-    
-</main>
-
-
-<div class="container">
-    <h2>Jumbotron</h2>
-    <p>The .jumbotron class indicates a big box for calling extra attention to featured content or information:</p>                  
-    <div class="jumbotron">
-      <h1>Hello World!</h1>
-      <p>Look over here!</p>
-    </div>
-  </div>
+    </main>
 
     <script src="./assets/js/script.js"></script>
   </body>
