@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Crypto-Dashboard</title>
+  </head>
+
+  <body class="flex-column min-100-vh">
+    <header class="hero">
+      <h1 class="app-title"><i class="fab fa-bitcoin"></i> Crypto-Dashboard</h1>
+      <p>
+        Search for cryto prices and relevant news, enter a token name to get started!
+      </p>
+    </header>
+
+    <main class="d-flex">
+
+    <div class="d-flex ">
+
+      <div class="col-6 col-md-4">
+        <div class="card">
+          <h3 class="card-header text-uppercase">Search By Token ID</h3>
+          <form id="user-form" class="card-body">
+            <label class="form-label" for="tokenId">Crypto Token ID</label>
+            <input
+              name="tokenId"
+              id="tokenId"
+              type="text"
+              autofocus="true"
+              class="form-input"
+            />
+            <button type="submit" class="sub-btn">Submit</button>
+          </form>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <h2 class="subtitle">
+              Search Results: <span id="coin-search"></span>
+            </h2>
+            <div id="results-container-1" class="list-group"></div>
+          </div>
+
+    </div>
+      
+
+    <div class="d-flex">
+
+
+        <div class="col-6 col-md-4">
+            <div class="card">
+              <h3 class="card-header text-uppercase">Search By Token name</h3>
+              <form id="user-form" class="card-body">
+                <label class="form-label" for="tokenId">Crypto Name</label>
+                <input
+                  name="token-name"
+                  id="token-name"
+                  type="text"
+                  autofocus="true"
+                  class="form-input"
+                />
+                <button type="submit" class="sub-btn2">Submit</button>
+              </form>
+            </div>
+
+
+
+
+
+      <div class="col-6 col-md-4">
+        <h2 class="subtitle">
+          Search Results: <span id="news-search"></span>
+        </h2>
+        <div id="results-container-2" class="list-group"></div>
+      </div>
+
+    </div>
+
+    
+</main>
+
+
+<div class="container">
+    <h2>Jumbotron</h2>
+    <p>The .jumbotron class indicates a big box for calling extra attention to featured content or information:</p>                  
+    <div class="jumbotron">
+      <h1>Hello World!</h1>
+      <p>Look over here!</p>
+    </div>
+  </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
