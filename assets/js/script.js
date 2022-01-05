@@ -15,7 +15,8 @@ fetch(req).then(function(response) {
         response.json().then(function(data) {
             displayNews(data);
             // console.log(response.json());
-        }
+        })
+
        } else {
         // if not successful, return to homepage
         document.location.replace("./index.html");
