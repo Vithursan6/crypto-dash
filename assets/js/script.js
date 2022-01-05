@@ -7,7 +7,7 @@ var url = 'https://newsapi.org/v2/everything?' +
           'apiKey=8796351310214ee8bc74043e9cc1ab9c';
 
 var req = new Request(url);
-debugger;
+
 // make get request to url 
 fetch(req).then(function(response) {
     // request successful
@@ -16,6 +16,7 @@ fetch(req).then(function(response) {
             displayNews(data);
             // console.log(response.json());
         })
+
        } else {
         // if not successful, return to homepage
         document.location.replace("./index.html");
