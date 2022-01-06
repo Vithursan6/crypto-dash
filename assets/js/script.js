@@ -57,8 +57,6 @@ var getTokenInfo = function(tokenId) {
 
 };
 
-
-
 var displayNews = function(news) {
     if (news.length === 0) {
         newsContainerEl.textContent = "There are no news items related to this currency."
