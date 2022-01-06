@@ -4,6 +4,7 @@ var userFormEl = document.querySelector("#user-form")
 var coinSearch = document.querySelector("#coin-search")
 
 
+
 var formSubmitHandler = function(event){
 
     //prevent page from refreshing
@@ -144,6 +145,30 @@ var displayMrkt = function(data) {
     if (data.length === 0) {
         mrktContainerEl.textContent = "This is not a cryptocurrency."
         return;
+
+        console.log(news);
+    }
+  
+// url variables
+var urlMrkt = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true'
+var reqA = new Request(urlMrkt);
+// make get request to market api
+fetch(reqA).then(function(response) {
+    // request successful
+    if (response.ok) {
+        response.json().then(function(data) {
+            displayMrkt(data);
+            // console.log(response.json());
+        })
+       } else {
+        // if not successful, return to homepage
+        document.location.replace("./index.html");
+    }    
+});
+var displayMrkt = function(data) {
+    if (data.length === 0) {
+        mrktContainerEl.textContent = "This is not a cryptocurrency."
+        return;
     }
 // loop over market objects
 for (var i=0; i < data.length; i++) {
@@ -155,5 +180,3 @@ objEl.textContent = data[i].title;
 // append to container
 mrktEl.appendChild(objEl);
 // append to DOM
-mrktContainerEl.appendChild(mrktEl);
-};
