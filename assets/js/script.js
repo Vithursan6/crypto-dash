@@ -6,21 +6,38 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 // DOM variables
+
 var mrktContainerEl = document.querySelector("#news-container1");
-//var mrktEl = document.querySelector("#news-container");
-var tokenId2El = document.querySelector("#tokenId");
 var newsContainerEl = document.querySelector("#news-container2");
 var tokenIdEl = document.querySelector("#tokenId");
+var tokenIdEl2 = document.querySelector("#newsId");
 var userFormEl = document.querySelector("#user-form");
-var userFormEl2 = document.querySelector("#user-form");
+var userFormEl2 = document.querySelector("#user-form2");
 var coinSearch = document.querySelector("#coin-search");
+var coinSearch2 = document.querySelector("#coin-search2");
+
+var formSubmitHandler2 = function(event){
+
+    //prevent page from refreshing
+    event.preventDefault();
+    
+    var newsId = tokenIdEl2.value.toUpperCase();
+    
+    if(newsId) {
+        getTokenInfo2(newsId);
+
+    }
+    console.log(newsId);
+
+};
+
 
 var formSubmitHandler = function(event){
 
     //prevent page from refreshing
     event.preventDefault();
     
-    var tokenId = tokenIdEl.value.toUpperCase();
+    var tokenId = tokenIdEl.value.trim();
     
     if(tokenId) {
         getTokenInfo(tokenId);
@@ -33,11 +50,11 @@ var formSubmitHandler = function(event){
 
 //debugger;
 
-var getTokenInfo = function(tokenId) {
+var getTokenInfo2 = function(newsId) {
 
-    console.log(tokenId);
+    console.log(newsId);
 
-    var url = 'https://newsapi.org/v2/everything?q=' + tokenId + '&from=2021-12-27&sortBy=popularity&apiKey=3c69c294543448eb99adc9b1cf4d8e3b';
+    var url = 'https://newsapi.org/v2/everything?q=' + newsId + '&from=2021-12-27&sortBy=popularity&apiKey=3c69c294543448eb99adc9b1cf4d8e3b';
 
     var req = new Request(url);
 
@@ -47,9 +64,9 @@ var getTokenInfo = function(tokenId) {
     fetch(req).then(function (response) {
         // request successful
         if (response.ok) {
-            response.json().then(function (data) {
-                displayNews(data, tokenId);
-                console.log(data);
+            response.json().then(function (news) {
+                displayNews(newsArr, newsId);
+                console.log(news);
             });
         } else {
             // if not successful, return to homepage
@@ -68,21 +85,6 @@ var getTokenInfo = function(tokenId) {
 
 };
 
-
-var formSubmitHandler = function(event){
-
-    //prevent page from refreshing
-    event.preventDefault();
-    
-    var user = tokenId2El.value.trim();
-    
-    if(user) {
-        getTokenInfo(user);
-
-    }
-    console.log(user);
-
-};
 
 var getTokenInfo = function(tokenId) {
 
@@ -119,16 +121,67 @@ var getTokenInfo = function(tokenId) {
 };
 
 
+var displayNews= function(newsArr) {
+    debugger;
+    if (newsArr.length === 0) {
+        newsContainerEl.textContent = "This is not a cryptocurrency."
+        return;
+
+        
+    }
+  
+    console.log(newsArr);
+    
+    // loop over market objects
+    for (var i=0; i < newsArr.length; i++) {
+
+    
+        var newsEl = document.createElement("h2");
+        newsEl.classList = "list-group";
+    
+        // create span to hold object title
+        //var objEl = document.createElement("span")
+
+        console.log(newsArr[i]);
+        newsEl.textContent = dataArr[i][0] + ": " + dataArr[i][1];
+  
+        console.log(newstEl);
+
+    
+
+        // append to container
+        //mrktEl.appendChild(objEl);
+
+        //console.log(mrktEl.value);
+
+        // append to DOM
+        //mrktEl.appendChild = objEl.textContent;
+        //console.log(mrktEl);
+        newsContainerEl = newsEl.textContent;
+        console.log(newsContainerEl);
+    
+    }
+
+
+};
+
+
+
+
+
+
+
+
 var displayData = function(dataArr) {
     debugger;
     if (dataArr.length === 0) {
         mrktContainerEl.textContent = "This is not a cryptocurrency."
         return;
 
-        console.log(news);
+        
     }
   
-    
+    console.log(dataArr);
     
     // loop over market objects
     for (var i=0; i < dataArr.length; i++) {
@@ -166,4 +219,5 @@ var displayData = function(dataArr) {
 
 //add event listeners to form and button container
 userFormEl.addEventListener("submit", formSubmitHandler);
+userFormEl2.addEventListener("submit", formSubmitHandler2);
 
