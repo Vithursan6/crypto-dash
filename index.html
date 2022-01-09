@@ -1,68 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Crypto-Dashboard</title>
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Small Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="./index.html">CryptoDash</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
 
-  <body class="flex-column min-100-vh">
-    <header class="hero">
-      <h1 class="app-title"><i class="fab fa-bitcoin"></i> Crypto-Dashboard</h1>
-      <p>
-        Search for cryto prices and relevant news, enter a token name to get started!
-      </p>
-    </header>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+          
+            <!-- Heading-->
+            <div class="jumbotron my-5 py-4">
+                <h1 class="app-title"><i class="fab fa-bitcoin"></i> CryptoDash</h1>
+                <p>
+                  Search for crypto prices and news!
+                </p>
+            </div>
+            <!-- Content Row-->
+            <div class="d-flex row gx-4 gx-lg-5">
 
-    <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <h3 class="card-header text-uppercase">Search By Token ID</h3>
-          <form id="user-form" class="card-body">
-            <label class="form-label" for="tokenId">Cryto Token ID</label>
-            <input
-              name="tokenId"
-              id="tokenId"
-              type="text"
-              autofocus="true"
-              class="form-input"
-            />
-            <button type="submit" class="sub-btn">Submit</button>
-          </form>
+                <div class="col-6 mb-2">
+                    <div class="card h-100" id="card">
+                        <div class="card-body" id="card-body">
+                            <h3 class="card-header text-uppercase">Search Crypto Prices</h3>
+                            <form id="user-form" class="card-body2">
+                              <label class="form-label" for="tokenId">Crypto Token ID</label>
+                              <input name="tokenId" id="tokenId" type="text" autofocus="true" class="form-input"/>
+                              <button type="submit" class="sub-btn btn-success">Submit</button>
+                            </form>
+
+                            <div>
+                                <h2 class="subtitle">
+                                  Search Results: <span id="coin-search" class="coinSearch"></span>
+                                </h2>
+                                <div id="news-container1" class="list-group"></div>
+                              </div>
+                            
+                        </div>
+
+                    </div>
+
+                  
+
+                </div>
+
+                <div class="col-6 mb-2">
+                    <div class="card h-100" id="card">
+                        <div class="card-body" id="card-body">
+                            <h3 class="card-header text-uppercase">Search Crytpo News</h3>
+                            <form id="user-form" class="card-body2">
+                              <label class="form-label" for="tokenId">Crypto Name</label>
+                              <input name="tokenId" id="tokenId" type="text" autofocus="true" class="form-input"/>
+                              <!-- <button type="submit" class="sub-btn btn-success">Submit</button> -->
+                            </form>
+
+                            <div>
+                                <h2 class="subtitle">
+                                  Search Results: <span id="coin-search"></span>
+                                </h2>
+                                <div id="news-container2" class="list-group2"></div>
+                              </div>
+
+                        </div>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
         </div>
 
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="col-lg-6">
+            <div class="container px-4 px-lg-12"><p class="ftext m-0">Copyright &copy; CryptoDash 2021</p></div>
+        </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
 
-      <div class="col-12 col-md-8">
-        <h2 class="subtitle">
-          Search Results: <span id="coin-search"></span>
-        </h2>
-        <div id="news-container" class="list-group"></div>
-      </div>
-    </main>
-
-    <script src="./assets/js/script.js"></script>
-  </body>
-  
-  
-  <footer>
-            
-    <div class="flex-row"></div>
-    <h2>Crypto Dashboard </h2>
-</div>
-
-<div>    
-    <a href="./about.html">ABOUT</a><br />
-    &copy; 2022 Crypto-Dash, Inc.
-</div>
-  </footer>
+        <script src="./js/scripts.js"></script>
+    </body>
 </html>
