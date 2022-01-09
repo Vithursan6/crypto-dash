@@ -65,8 +65,12 @@ var getTokenInfo2 = function(newsId) {
         // request successful
         if (response.ok) {
             response.json().then(function (news) {
-                displayNews(newsArr, newsId);
+
                 console.log(news);
+
+                let newsArr = Object.fromEntries(news);
+                displayNews(newsArr, newsId);
+                console.log(newsArr);
             });
         } else {
             // if not successful, return to homepage
@@ -133,19 +137,25 @@ var displayNews= function(newsArr) {
     console.log(newsArr);
     
     // loop over market objects
+    // var newDatArr =  Object.entries(newsArr[3]);
+    // console.log(newDatArr);
+
     for (var i=0; i < newsArr.length; i++) {
 
     
         var newsEl = document.createElement("h2");
         newsEl.classList = "list-group";
     
-        // create span to hold object title
-        //var objEl = document.createElement("span")
+        // //create span to hold object title
+        // var objEl = document.createElement("span")
+        // objEl.innerHTML = 
 
         console.log(newsArr[i]);
-        newsEl.textContent = dataArr[i][0] + ": " + dataArr[i][1];
+        newsEl.textContent = newsArr[i][5];
+
+        console.log(newsArr[i][5]);
   
-        console.log(newstEl);
+        console.log(newsEl);
 
     
 
