@@ -11,8 +11,8 @@ var newsContainerEl = document.querySelector("#news-container");
 var userFormEl = document.querySelector("#user-form");
 var coinSearch = document.querySelector("#coin-search");
 
-
 // var formSubmitHandler = function(event){
+
 
 //     //prevent page from refreshing
 //     event.preventDefault();
@@ -67,6 +67,7 @@ var coinSearch = document.querySelector("#coin-search");
 
 
 
+
 // var displayNews = function(newsApi) {
 //     if (newsApi.length === 0) {
 //         newsContainerEl.textContent = "There are no news items related to this currency."
@@ -87,6 +88,7 @@ var coinSearch = document.querySelector("#coin-search");
 //     newsEl.classList = "list-item flex-row justify-space-between align-center";
 //     //console.log(news[i]);
 
+
 //     // create span to hold news title
 // var titleEl = document.createElement("span");
 // titleEl.textContent = newsName;
@@ -102,14 +104,12 @@ var coinSearch = document.querySelector("#coin-search");
 
 // };
 
-
-
-
 // DOM variables
 var mrktContainerEl = document.querySelector("#news-container1");
 //var mrktEl = document.querySelector("#news-container");
 var tokenId2El = document.querySelector("#tokenId");
 
+    }
 
 var formSubmitHandler = function(event){
 
@@ -127,6 +127,7 @@ var formSubmitHandler = function(event){
 };
 
 var getTokenInfo = function(tokenId) {
+
 
     // url variables
     var urlMrkt = "https://api.coingecko.com/api/v3/simple/price?ids=" + tokenId + "&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true"
@@ -165,7 +166,10 @@ var displayData = function(dataArr) {
     if (dataArr.length === 0) {
         mrktContainerEl.textContent = "This is not a cryptocurrency."
         return;
+
+        console.log(news);
     }
+  
     
     
     // loop over market objects
@@ -204,3 +208,4 @@ var displayData = function(dataArr) {
 
 //add event listeners to form and button container
 userFormEl.addEventListener("submit", formSubmitHandler);
+
