@@ -79,7 +79,9 @@ var getTokenInfo2 = function(newsId) {
 
                     console.log(artArr);
 
-                displayNews(newsArr, newsId);
+                displayNews(artArr, newsId);
+
+                displayData(urlArr, newsId);
                 console.log(newsArr);
 
 
@@ -138,35 +140,36 @@ var getTokenInfo = function(tokenId) {
 };
 
 
-var displayNews= function(newsArr) {
+var displayNews= function(artArr) {
     debugger;
-    if (newsArr.length === 0) {
+    if (artArr.length === 0) {
         newsContainerEl.textContent = "This is not a cryptocurrency."
         return;
 
         
     }
   
-    console.log(newsArr);
     
     // loop over market objects
     // var newDatArr =  Object.entries(newsArr[3]);
     // console.log(newDatArr);
 
-    for (var i=0; i < newsArr.length; i++) {
+    for (var i=0; i < artArr.length; i++) {
 
     
         var newsEl = document.createElement("h2");
-        newsEl.classList = "list-group";
+        newsEl.classList = "list-group2";
     
-        // //create span to hold object title
-        // var objEl = document.createElement("span")
-        // objEl.innerHTML = 
+         //create span to hold object title
+         var objEl = document.createElement("span")
+         objEl.classList = "list-group2"
 
-        console.log(newsArr[i]);
-        newsEl.textContent = newsArr[i];
+        console.log(artArr[i]);
+        newsEl.textContent = artArr[i];
 
-        console.log(newsArr[i][5]);
+        // objEl.textContent = urlArr[i];
+
+        // console.log(newsArr[i][5]);
   
         console.log(newsEl);
 
@@ -187,6 +190,56 @@ var displayNews= function(newsArr) {
 
 
 };
+
+var displayUrl= function(urlArr) {
+    debugger;
+    if (urlArr.length === 0) {
+        newsContainerEl.textContent = "This is not a cryptocurrency."
+        return;
+
+        
+    }
+  
+    
+    // loop over market objects
+    // var newDatArr =  Object.entries(newsArr[3]);
+    // console.log(newDatArr);
+
+    for (var i=0; i < urlArr.length; i++) {
+
+    
+         //create span to hold object title
+         var objEl = document.createElement("a")
+         objEl.classList = "list-group2"
+
+        console.log(artArr[i]);
+        objEl.textContent = urlArr[i];
+
+        // objEl.textContent = urlArr[i];
+
+        // console.log(newsArr[i][5]);
+  
+        console.log(objEl);
+
+    
+
+        // append to container
+        //mrktEl.appendChild(objEl);
+
+        //console.log(mrktEl.value);
+
+        // append to DOM
+        //mrktEl.appendChild = objEl.textContent;
+        //console.log(mrktEl);
+        newsContainerEl = newsEl.textContent;
+        console.log(newsContainerEl);
+    
+    }
+
+
+};
+
+
 
 
 
@@ -218,6 +271,7 @@ var displayData = function(dataArr) {
         console.log(mrktEl);
 
         // append to DOM
+
         mrktContainerEl.appendChild(mrktEl);
         console.log(mrktContainerEl);
     
