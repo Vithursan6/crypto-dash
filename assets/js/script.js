@@ -48,7 +48,6 @@ var formSubmitHandler = function(event){
 };
 
 
-//debugger;
 
 var getTokenInfo2 = function(newsId) {
 
@@ -68,9 +67,23 @@ var getTokenInfo2 = function(newsId) {
 
                 console.log(news);
 
-                let newsArr = Object.fromEntries(news);
+                var newsArr = Object.values(news);
+
+                var artArr = Object.keys(news.articles).reduce(function (p, c){
+                    return p.concat([news.articles[c].title]);}, []);
+
+                var urlArr = Object.keys(news.articles).reduce(function (p, c){
+                    return p.concat([news.articles[c].url]);}, []);
+    
+                    console.log(urlArr);
+
+                    console.log(artArr);
+
                 displayNews(newsArr, newsId);
                 console.log(newsArr);
+
+
+
             });
         } else {
             // if not successful, return to homepage
@@ -151,7 +164,7 @@ var displayNews= function(newsArr) {
         // objEl.innerHTML = 
 
         console.log(newsArr[i]);
-        newsEl.textContent = newsArr[i][5];
+        newsEl.textContent = newsArr[i];
 
         console.log(newsArr[i][5]);
   
