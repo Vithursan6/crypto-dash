@@ -13,8 +13,6 @@ var tokenIdEl = document.querySelector("#tokenId");
 var tokenIdEl2 = document.querySelector("#newsId");
 var userFormEl = document.querySelector("#user-form");
 var userFormEl2 = document.querySelector("#user-form2");
-var coinSearch = document.querySelector("#coin-search");
-var coinSearch2 = document.querySelector("#coin-search2");
 
 var formSubmitHandler2 = function(event){
 
@@ -67,7 +65,6 @@ var getTokenInfo2 = function(newsId) {
 
                 console.log(news);
 
-                var newsArr = Object.values(news);
 
                 var artArr = Object.keys(news.articles).reduce(function (p, c){
                     return p.concat([news.articles[c].title]);}, []);
@@ -82,7 +79,7 @@ var getTokenInfo2 = function(newsId) {
                 displayNews(artArr, newsId);
 
                 displayData(urlArr, newsId);
-                console.log(newsArr);
+                console.log(urlArr);
 
 
 
@@ -140,113 +137,6 @@ var getTokenInfo = function(tokenId) {
 };
 
 
-var displayNews= function(artArr) {
-    debugger;
-    if (artArr.length === 0) {
-        newsContainerEl.textContent = "This is not a cryptocurrency."
-        return;
-
-        
-    }
-  
-    
-    // loop over market objects
-    // var newDatArr =  Object.entries(newsArr[3]);
-    // console.log(newDatArr);
-
-    for (var i=0; i < artArr.length; i++) {
-
-    
-        var newsEl = document.createElement("h2");
-        newsEl.classList = "list-group2";
-    
-         //create span to hold object title
-         var objEl = document.createElement("span")
-         objEl.classList = "list-group2"
-
-        console.log(artArr[i]);
-        newsEl.textContent = artArr[i];
-
-        // objEl.textContent = urlArr[i];
-
-        // console.log(newsArr[i][5]);
-  
-        console.log(newsEl);
-
-    
-
-        // append to container
-        //mrktEl.appendChild(objEl);
-
-        //console.log(mrktEl.value);
-
-        // append to DOM
-        //mrktEl.appendChild = objEl.textContent;
-        //console.log(mrktEl);
-        newsContainerEl = newsEl.textContent;
-        console.log(newsContainerEl);
-    
-    }
-
-
-};
-
-var displayUrl= function(urlArr) {
-    debugger;
-    if (urlArr.length === 0) {
-        newsContainerEl.textContent = "This is not a cryptocurrency."
-        return;
-
-        
-    }
-  
-    
-    // loop over market objects
-    // var newDatArr =  Object.entries(newsArr[3]);
-    // console.log(newDatArr);
-
-    for (var i=0; i < urlArr.length; i++) {
-
-    
-         //create span to hold object title
-         var objEl = document.createElement("a")
-         objEl.classList = "list-group2"
-
-        console.log(artArr[i]);
-        objEl.textContent = urlArr[i];
-
-        // objEl.textContent = urlArr[i];
-
-        // console.log(newsArr[i][5]);
-  
-        console.log(objEl);
-
-    
-
-        // append to container
-        //mrktEl.appendChild(objEl);
-
-        //console.log(mrktEl.value);
-
-        // append to DOM
-        //mrktEl.appendChild = objEl.textContent;
-        //console.log(mrktEl);
-        newsContainerEl = newsEl.textContent;
-        console.log(newsContainerEl);
-    
-    }
-
-
-};
-
-
-
-
-
-
-
-
-
 
 var displayData = function(dataArr) {
     //debugger;
@@ -279,6 +169,104 @@ var displayData = function(dataArr) {
 
 
 };
+
+var displayNews= function(artArr) {
+    debugger;
+    if (artArr.length === 0) {
+        newsContainerEl.textContent = "This is not a cryptocurrency."
+        return;
+
+        
+    }
+  
+
+    for (var i=0; i < 10; i++) {
+
+    
+        var newsEl = document.createElement("h2");
+        newsEl.classList = "list-group2";
+
+
+        console.log(artArr[i]);
+        newsEl.textContent = artArr[i];
+
+        // objEl.textContent = urlArr[i];
+
+        // console.log(newsArr[i][5]);
+  
+        console.log(newsEl);
+
+    
+
+        // append to container
+        //mrktEl.appendChild(objEl);
+
+        //console.log(mrktEl.value);
+
+        // append to DOM
+        //mrktEl.appendChild = objEl.textContent;
+        //console.log(mrktEl);
+        newsContainerEl.appendChild(newsEl);
+        console.log(newsContainerEl);
+    
+    }
+
+
+};
+
+var displayUrl= function(urlArr) {
+    debugger;
+    if (urlArr.length === 0) {
+        newsContainerEl.textContent = "This is not a cryptocurrency."
+        return;
+
+        
+    }
+  
+
+    for (var i=0; i < 10; i++) {
+
+    
+         //create span to hold object title
+         var objEl = document.createElement("a")
+         objEl.classList = "list-group2"
+
+        console.log(urlArr[i]);
+        
+        objEl.textContent = urlArr[i];
+
+        // objEl.textContent = urlArr[i];
+
+        // console.log(newsArr[i][5]);
+  
+        console.log(objEl);
+
+    
+
+        // append to container
+        //mrktEl.appendChild(objEl);
+
+        //console.log(mrktEl.value);
+
+        // append to DOM
+        //mrktEl.appendChild = objEl.textContent;
+        //console.log(mrktEl);
+        newsContainerEl.appendChild(newsEl);
+        console.log(newsContainerEl);
+    
+    }
+
+
+};
+
+
+
+
+
+
+
+
+
 
 
 //add event listeners to form and button container
