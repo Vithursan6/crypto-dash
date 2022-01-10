@@ -1,3 +1,4 @@
+![project header](https://user-images.githubusercontent.com/92878321/148716817-db997bfe-0ed1-4aa9-bf87-3fffef3ad930.jpg)
 
 # Crypto-Dashboard
 
