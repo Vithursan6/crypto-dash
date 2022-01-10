@@ -1,4 +1,7 @@
 
+![project header](https://user-images.githubusercontent.com/92878321/148716794-bc0a98fa-d45a-4024-b80d-3a3dcc47a706.jpg)
+
+
 # Crypto-Dashboard
 
 Purpose:
