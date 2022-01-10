@@ -196,7 +196,7 @@ var displayNews= function(newsArr) {
 
 
 var displayData = function(dataArr) {
-    debugger;
+    //debugger;
     if (dataArr.length === 0) {
         mrktContainerEl.textContent = "This is not a cryptocurrency."
         return;
@@ -209,29 +209,16 @@ var displayData = function(dataArr) {
     // loop over market objects
     for (var i=0; i < dataArr.length; i++) {
 
-    
+        // create element to hold object 
         var mrktEl = document.createElement("h2");
         mrktEl.classList = "list-group";
-    
-        // create span to hold object title
-        //var objEl = document.createElement("span")
 
         console.log(dataArr[i]);
         mrktEl.textContent = dataArr[i][0] + ": " + dataArr[i][1];
-  
         console.log(mrktEl);
 
-    
-
-        // append to container
-        //mrktEl.appendChild(objEl);
-
-        //console.log(mrktEl.value);
-
         // append to DOM
-        //mrktEl.appendChild = objEl.textContent;
-        //console.log(mrktEl);
-        mrktContainerEl = mrktEl.textContent;
+        mrktContainerEl.appendChild(mrktEl);
         console.log(mrktContainerEl);
     
     }
