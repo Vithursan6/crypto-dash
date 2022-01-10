@@ -78,7 +78,7 @@ var getTokenInfo2 = function(newsId) {
 
                 displayNews(artArr, newsId);
 
-                displayData(urlArr, newsId);
+                displayUrl(urlArr, newsId);
                 console.log(urlArr);
 
 
@@ -230,9 +230,11 @@ var displayUrl= function(urlArr) {
          //create span to hold object title
          var objEl = document.createElement("a")
          objEl.classList = "list-group2"
+         //objEl.getAttribute = 
+
 
         console.log(urlArr[i]);
-        
+
         objEl.textContent = urlArr[i];
 
         // objEl.textContent = urlArr[i];
@@ -251,7 +253,7 @@ var displayUrl= function(urlArr) {
         // append to DOM
         //mrktEl.appendChild = objEl.textContent;
         //console.log(mrktEl);
-        newsContainerEl.appendChild(newsEl);
+        newsContainerEl.appendChild(objEl);
         console.log(newsContainerEl);
     
     }
