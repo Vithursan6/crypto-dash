@@ -185,13 +185,16 @@ var displayNews= function(newsArr) {
 var displayData = function(dataArr) {
     //debugger;
     if (dataArr.length === 0) {
-        mrktContainerEl.textContent = "This is not a cryptocurrency."
+        window.prompt("This is not a cryptocurrency.");
         return;
 
         
     }
   
     console.log(dataArr);
+
+    // clear DOM container
+    document.getElementById("news-container1").innerHTML = "";
     
     // loop over market objects
     for (var i=0; i < dataArr.length; i++) {
