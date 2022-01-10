@@ -4635,7 +4635,7 @@ textarea.form-control-lg {
   display: flex;
   color: white;
   background-color: var(--bs-teal);
-  padding: 5rem 3rem;
+  padding: 1rem 1rem;
   box-shadow: -2px -2px black;
   border-radius: 5px;
   opacity: 0.95;
