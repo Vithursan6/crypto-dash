@@ -237,10 +237,21 @@ var displayUrl= function(urlArr) {
 
         // objEl.textContent = urlArr[i];
 
-        // console.log(newsArr[i][5]);
-  
-        console.log(objEl);
+      
 
+var displayData = function(dataArr) {
+    //debugger;
+    if (dataArr.length === 0) {
+        window.prompt("This is not a cryptocurrency.");
+        return;
+
+        
+    }
+  
+    console.log(dataArr);
+
+    // clear DOM container
+    document.getElementById("news-container1").innerHTML = "";
     
 
         // append to container
